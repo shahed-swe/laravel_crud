@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master.master')
 
 @section('content')
 
@@ -11,5 +11,6 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </p>
 </div>
+<input type="text" class="form-control">
 
 @endsection

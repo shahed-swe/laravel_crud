@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="/resources/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -49,6 +49,16 @@
             </form>
         </div>
     </nav>
+    <style>
+        .head_one {
+            color: red;
+            background-color: aquamarine;
+            font-size: 72px;
+        }
+    </style>
+    <div>
+        <h1 class="head_one">hello Everyone</h1>
+    </div>
     <!-- element container -->
     @yield('content')
     <!-- Optional JavaScript -->
