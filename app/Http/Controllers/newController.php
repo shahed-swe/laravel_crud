@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 
 class newController extends Controller
 {
-    public function hello(){
-        // return view('about');
-        echo "New Home Page";
+    public function home(){
+        return view('front.home',['title' => 'Home']);
     }
-    public function hello2(){
-        // return view('about');
-        return view('home.back');
+    public function about(){
+        return view('front.about',['title' => 'About']);
+    }
+    public function contact(){
+        return view('front.contact',['title' => 'Contact']);
     }
 }

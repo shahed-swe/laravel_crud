@@ -13,46 +13,49 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // basic ruoting technique
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
-Route::get('/contact',function(){
-    echo "New contact page";
-})->middleware('age');
-
-
-// Route::any('home', function () {
-//     echo 'this is home page';
+// Route::get('/', function () {
+//     return view('welcome');
 // });
-// name routing technique
-// Route::get('','')->name('');
 
-// prefix route
-// Route::prefix('learnhunter')->group(function(){
+Route::get('/', 'newController@home')->name('home');
+Route::get('/about', 'newController@about')->name('about');
+Route::get('/contact', 'newController@contact')->name('contact');
+
+
+// Route::get('/contact',function(){
+//     echo "New contact page";
+// })->middleware('age');
+
+
+// // Route::any('home', function () {
+// //     echo 'this is home page';
+// // });
+// // name routing technique
+// // Route::get('','')->name('');
+
+// // prefix route
+// // Route::prefix('learnhunter')->group(function(){
+// //     Route::get('/about',function(){
+// //         return view('about');
+// //     });
+
+// //     Route::get('/contact',function(){
+// //         echo "New contact page";
+// //     });
+// // });
+
+// Route::group(['middleware' => ['age']], function () {
 //     Route::get('/about',function(){
-//         return view('about');
+//         return view('about',['title' => 'About']);
 //     });
 
-//     Route::get('/contact',function(){
-//         echo "New contact page";
+//     Route::get('/new',function(){
+//         echo "This is new page";
 //     });
+//     Route::get('/guru','newController@hello');
 // });
 
-Route::group(['middleware' => ['age']], function () {
-    Route::get('/about',function(){
-        return view('about',['title' => 'About']);
-    });
-
-    Route::get('/new',function(){
-        echo "This is new page";
-    });
-    Route::get('/guru','newController@hello');
-});
-
-Route::get(md5('/take'),'newController@hello2')->name('take');
+// Route::get(md5('/take'),'newController@hello2')->name('take');
 
 
 // ---------name of routes----------- //
