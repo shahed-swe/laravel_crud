@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ $title }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -79,11 +79,11 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Laravel
+                About Page
             </div>
             <div class="links">
-                <a href="{{ URL('take') }}">Home</a>
-                <a href="{{route('take')}}">About</a>
+                <a href="{{ url('home') }}">Home</a>
+                <a href="https://laracasts.com">Laracasts</a>
                 <a href="https://laravel-news.com">News</a>
                 <a href="https://blog.laravel.com">Blog</a>
                 <a href="https://nova.laravel.com">Nova</a>
