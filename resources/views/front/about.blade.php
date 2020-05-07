@@ -1,4 +1,5 @@
-@extends('master.master') @section('content')
+@extends('master.master') 
+@section('content')
 
 <style>
     section {
@@ -33,7 +34,7 @@
                     <hr class="my-4">
                     <p>To Learn more please visit to our owner's profile</p>
                     <p class="lead">
-                        <a class="btn btn-success btn-lg btn-color" href="#" role="button">Visit Profile</a>
+                        <a class="btn btn-success btn-lg btn-color" href="https://www.facebook.com/saj.tasin" role="button">Visit Profile</a>
                     </p>
                 </div>
             </div>
