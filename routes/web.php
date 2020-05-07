@@ -67,3 +67,6 @@ Route::get('/contact', 'newController@contact')->name('contact');
 // option
 // any
 // match
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
