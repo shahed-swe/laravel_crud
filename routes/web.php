@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Auth::routes();
 
+Route::get('/home', 'newController@home')->name('home');
 Route::get('/', 'newController@home')->name('home');
 Route::get('/about', 'newController@about')->name('about');
 Route::get('/contact', 'newController@contact')->name('contact');
@@ -67,6 +69,4 @@ Route::get('/contact', 'newController@contact')->name('contact');
 // option
 // any
 // match
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
