@@ -1,22 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/resources/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
     <title>{{ $title }}</title>
 </head>
 
 <body>
+    <!-- preloader wrapper -->
+    <div id="loader">
+        <div class='overlay'>
+            <div class='preloader'>
+                <div class='diamond'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class='movement'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- navbar section -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-success">
+    <nav class="navbar navbar-expand-sm navbar-light bg-success margin">
         <a class="navbar-brand" href="#">
-            <img class="d-inline-block align-top" src="{{ resources('img/Logo.png') }}" alt="">
+            <img class="d-inline-block align-top" src="{{asset('front/img/Logo.png')}}" alt="" style="height: 35px; width:140px; margin:0;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,44 +47,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('about')}}">About</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact')}}" tabindex="-1">Contact</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
-    <style>
-        .head_one {
-            color: red;
-            background-color: aquamarine;
-            font-size: 72px;
-        }
-    </style>
-    <div>
-        <h1 class="head_one">hello Everyone</h1>
-    </div>
+    <!-- horizontal row -->
+    <hr class="horizontal-row">
+
+
+
     <!-- element container -->
     @yield('content')
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        $(window).on('load', function() {
+            $("#loader").delay(1000).fadeOut("slow");
+        });
+    </script>
 </body>
 
 </html>
