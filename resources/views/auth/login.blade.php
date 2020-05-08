@@ -1,9 +1,10 @@
-@extends('layouts.app')
+@extends('master.master')
 
 @section('content')
+<section>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -68,6 +69,10 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+
+        </div>
     </div>
 </div>
+</section>
 @endsection

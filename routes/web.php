@@ -23,7 +23,6 @@ Route::get('/', 'newController@home')->name('home');
 Route::get('/about', 'newController@about')->name('about');
 Route::get('/contact', 'newController@contact')->name('contact');
 
-
 // Route::get('/contact',function(){
 //     echo "New contact page";
 // })->middleware('age');
