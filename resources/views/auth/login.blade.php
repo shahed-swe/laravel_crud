@@ -68,6 +68,18 @@
     .fa-twitter:hover {
         color: #76b4e4;
     }
+    
+    .home {
+        display: none;
+    }
+    
+    .about {
+        display: none;
+    }
+    
+    .contact {
+        display: none;
+    }
 </style>
 <section class="made">
     <div class="container">

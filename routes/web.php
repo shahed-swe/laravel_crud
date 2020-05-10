@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 // });
 Auth::routes();
 
-Route::get('/home', 'newController@home')->name('home');
-Route::get('/', 'newController@home')->name('home');
-Route::get('/about', 'newController@about')->name('about');
-Route::get('/contact', 'newController@contact')->name('contact');
+Route::get('/home', 'newController@home')->name('home')->middleware('auth');
+Route::get('/', 'newController@home')->name('home')->middleware('auth');
+Route::get('/about', 'newController@about')->name('about')->middleware('auth');
+Route::get('/contact', 'newController@contact')->name('contact')->middleware('auth');
 
 // Route::get('/contact',function(){
 //     echo "New contact page";

@@ -44,13 +44,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('home')}}"> Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link home" href="{{ route('home')}}"> Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about')}}">About</a>
+                    <a class="nav-link about" href="{{ route('about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact')}}" tabindex="-1">Contact</a>
+                    <a class="nav-link contact" href="{{ route('contact')}}" tabindex="-1">Contact</a>
                 </li>
             </ul>
         </div>
