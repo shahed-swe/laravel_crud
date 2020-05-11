@@ -10,28 +10,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset ('css/app.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
     <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
     <title>{{ $title ?? '' }}</title>
 </head>
 
 <body>
-    <!-- preloader wrapper -->
-    <div id="loader">
-        <div class='overlay'>
-            <div class='preloader'>
-                <div class='diamond'>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class='movement'>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </div>
         <!-- navbar section -->
     <nav class="navbar navbar-expand-sm navbar-light bg-success margin">
         <a class="navbar-brand" href="#">
@@ -51,6 +35,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link contact" href="{{ route('contact')}}" tabindex="-1">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link contact" href="{{ route('post')}}" tabindex="-1">Write Post</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link contact" href="{{ route('alldata')}}" tabindex="-1">All Data</a>
                 </li>
             </ul>
         </div>
@@ -74,7 +64,7 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout -form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -90,10 +80,8 @@
     
     <!-- horizontal row -->
     <hr class="horizontal-row">
-    <div id="app">
-        <content></content>
-    </div>
-    
+        <!-- preloader wrapper -->
+
 
 
     <!-- element container -->
@@ -102,13 +90,56 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{asset ('js/app.js')}}"></script>
     <script>
         $(window).on('load', function() {
             $("#loader").fadeOut("slow");
         });
     </script>
-    <script src="{{asset ('js/app.js')}}"></script>
+    <script>
+        @if(Session::has('message'))
+            var type="{{Session::get('alert-type','info')}}";
+            // alert("{{Session::get('message')}}");
+            // alert(type)
+            switch(type){
+                case 'Info':
+                    toastr.info("{{Session::get('message')}}");
+                    break;
+                case 'Success':
+                    toastr.success("{{Session::get('message')}}");
+                    break;
+                case 'Warning':
+                    toastr.warning("{{Session::get('message')}}");
+                    break;
+                case 'Error':
+                    toastr.error("{{Session::get('message')}}");
+                    break;
+            }
+        @endif
+    </script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $(document).on('click','#delete_btn' ,function (event) {
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: 'Are you sure?',
+            text: 'This record and it`s details will be permanantly deleted!',
+            icon: 'warning',
+            buttons: ["Cancel", "Yes!"],
+            dangerMode: true,
+        }).then(function(value) {
+            if (value) {
+                window.location.href = url;
+            }
+            else{
+                swal("Data Saved!");
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>

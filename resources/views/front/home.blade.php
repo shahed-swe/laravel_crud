@@ -1,4 +1,5 @@
 @extends('master.master') 
+
 @section('content')
 
 <style>
@@ -59,6 +60,24 @@
         color: #76b4e4;
     }
 </style>
+<section>
+    <div id="loader">
+        <div class='overlay'>
+            <div class='preloader'>
+                <div class='diamond'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class='movement'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section>
     <div class="conatiner">
         <div class="row">
